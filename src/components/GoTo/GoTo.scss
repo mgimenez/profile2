@@ -1,0 +1,32 @@
+.goto {
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 100px;
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+  font-weight: 100;
+  transition: all .5s ease-out;
+  .goto__text {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  &.animated {
+    bottom: 20px;
+    opacity: 1;
+  }
+
+  .goto__arrow {
+    position: relative;
+    animation: arrow .8s infinite 3s;
+  }
+}
+
+
+@keyframes arrow {
+  from, to { top: 0;}
+  50% { top: 10px;}
+}
