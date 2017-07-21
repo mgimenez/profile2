@@ -8,7 +8,7 @@ class Hero extends Component {
     super(props);
 
     this.state = {
-      data: 'Hi, Im Matias. Web Designer & Frontend Developer.',
+      data: 'Hi, I\'m Matias. Web Designer & Frontend Developer.',
       written: '',
       chLength: 0
 

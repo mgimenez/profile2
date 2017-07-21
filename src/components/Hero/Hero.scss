@@ -9,9 +9,13 @@
     top: 50%;
     position: relative;
     text-align: center;
-    height: 301px;
+    // height: 370px;
+    @include respond-to('medium') {
+      // height: 301px;
+    }
   }
   .hero__title {
+    visibility: hidden;
     font-family: 'Bree Serif';
     font-size: 33px;
     letter-spacing: 3px;
@@ -21,7 +25,7 @@
     min-height: 37px;
     position: relative;
     @include respond-to('medium') {
-      max-width: 500px;
+      max-width: 550px;
     }
 
     &.cursor:after {
@@ -39,12 +43,67 @@
   .hero__profile-pic {
     width: 150px;
     height: 150px;
+    top: 30px;
     border-radius: 50%;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    animation: bounceIn 1s ease-out;
+    position: relative;
+    border: solid 5px #fff;
   }
 }
 
 @keyframes cursor {
   from, to { opacity: 0;}
   50% { opacity: 1;}
+}
+
+@keyframes flip {
+  0% {
+    top: -100vh;
+    opacity: 0;
+    transform: rotateY(0);
+  }
+  50% {
+    top: 0;
+    opacity: 1;
+    transform: rotateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+}
+
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
 }
