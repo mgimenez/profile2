@@ -4,17 +4,22 @@
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/low_contrast_linen.png");
   height: 100vh;
 
+  .hero__content {
+    transform: translateY(-50%);
+    top: 50%;
+    position: relative;
+    text-align: center;
+    height: 301px;
+  }
   .hero__title {
     font-family: 'Bree Serif';
     font-size: 33px;
     letter-spacing: 3px;
-    color: #fff;
-    transform: translateY(40vh);
-    text-align: center;
-    max-width: 320px;
     margin: auto;
-    position: relative;
+    color: #fff;
+    max-width: 320px;
     min-height: 37px;
+    position: relative;
     @include respond-to('medium') {
       max-width: 500px;
     }
@@ -29,6 +34,13 @@
       background-color: #fff;
 
     }
+  }
+
+  .hero__profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 50px;
   }
 }
 

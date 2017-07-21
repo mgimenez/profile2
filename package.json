@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "npm run clean && NODE_ENV=production webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,9 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "fbemitter": "^2.1.1",
+    "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
+    "image-webpack-loader": "^3.3.1",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

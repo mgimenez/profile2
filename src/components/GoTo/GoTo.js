@@ -27,7 +27,7 @@ class GoTo extends Component {
   render() {
     return (
       <a className={`goto component ${this.state.animated ? 'animated' : ''}`} href="#">
-        <span className="goto__text">View more</span>
+        <span className="goto__text">know me!</span>
 
         <svg className="goto__arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 129 129" enableBackground="new 0 0 129 129" width="30px" height="30px">
           <g>

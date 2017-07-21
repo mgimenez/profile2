@@ -45,7 +45,10 @@ class Hero extends Component {
   render() {
     return (
       <main className="hero component">
-        <h1 className={`hero__title cursor`}>{this.state.written}</h1>
+        <div className="hero__content">
+          <img className="hero__profile-pic" src={require("./images/profile-picture.jpg")} />
+          <h1 className={`hero__title cursor`}>{this.state.written}</h1>
+        </div>
       </main>
     )
   }
