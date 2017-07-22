@@ -5,21 +5,30 @@
   height: 100vh;
 
   .hero__content {
-    transform: translateY(-50%);
-    top: 50%;
+    // transform: translateY(-50%);
+    top: 25%;
     position: relative;
     text-align: center;
     // height: 370px;
     @include respond-to('medium') {
+      top: 35%;
       // height: 301px;
     }
   }
+
+  .hero__title__container {
+    min-height: 148px;
+    @include respond-to('medium') {
+      min-height: 74px;
+    }
+  }
+
   .hero__title {
     visibility: hidden;
     font-family: 'Bree Serif';
     font-size: 33px;
     letter-spacing: 3px;
-    margin: auto;
+    margin: 30px auto;
     color: #fff;
     max-width: 320px;
     min-height: 37px;
@@ -38,23 +47,33 @@
       background-color: #fff;
 
     }
+
+    &.show {
+      visibility: visible;
+    }
   }
 
   .hero__profile-pic {
     width: 150px;
     height: 150px;
-    top: 30px;
+    top: 50px;
     border-radius: 50%;
     // margin-bottom: 50px;
-    animation: bounceIn 1s ease-out;
+    animation: bounceIn 1s ease-out, toTop 1s forwards 2s;
     position: relative;
     border: solid 5px #fff;
+    backface-visibility: hidden;
   }
 }
 
 @keyframes cursor {
   from, to { opacity: 0;}
   50% { opacity: 1;}
+}
+
+@keyframes toTop {
+  from { top: 50px; }
+  to { top: 0px; }
 }
 
 @keyframes flip {

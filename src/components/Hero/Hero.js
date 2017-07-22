@@ -1,6 +1,8 @@
 import './Hero.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import Typing from '../Typing/Typing';
+// import ScrollMagic from 'scrollmagic';
 
 class Hero extends Component {
 
@@ -9,50 +11,65 @@ class Hero extends Component {
 
     this.state = {
       data: 'Hi, I\'m Matias. Web Designer & Frontend Developer.',
-      written: '',
-      chLength: 0
+      showText: false
 
     }
   }
 
   componentDidMount() {
-    // var emitter =
-    setTimeout(() => {
-      this.writeText();
-    }, 2000);
-  }
-
-  writeText() {
 
     const { emitter } = this.props;
+    let windowHeight = window.innerHeight;
+    setTimeout(() => {
 
-    var intervalText = setInterval(() => {
+      this.setState({
+        showText: true
+      });
 
-      if (this.state.data[this.state.chLength] != undefined) {
-        this.setState({
-          written: this.state.written += this.state.data[this.state.chLength],
-          chLength: this.state.chLength + 1
-        });
-      } else {
-        clearInterval(intervalText);
-        emitter.emit('textEffect');  // Listener prints "5 10".
+    }, 3000);
 
-      }
+    var pinScene = new ScrollMagic.Scene({
+        triggerElement: '.hero',
+        triggerHook: 'onLeave',
+        duration: windowHeight - (this.refs.content.offsetTop + this.refs.pic.height/2) + 'px'
+    })
+    .setPin('.hero__content', {
+      pushFollowers: false
+    })
+    .addIndicators()
+    .addTo(this.props.sm)
 
-    }, 100)
+    var pinScene2 = new ScrollMagic.Scene({
+        triggerElement: '.about-me',
+        triggerHook: 'onEnter',
+        offset: windowHeight - this.refs.pic.height,
+        duration: '100%'
+    })
+    .setPin('.hero', {
+      pushFollowers: false
+    })
+    .addIndicators()
+    .addTo(this.props.sm);
+
   }
 
   render() {
     return (
       <main className="hero component">
-        <div className="hero__content">
-          <img className="hero__profile-pic" src={require("./images/profile-picture.jpg")} />
-          <h1 className={`hero__title cursor`}>{this.state.written}</h1>
+        <div ref="content" className="hero__content">
+          <img ref="pic" className="hero__profile-pic" src={require("./images/profile-picture.jpg")} />
+          <div className="hero__title__container" >
+            {
+              this.state.showText ?
+                (<Typing text={this.state.data} cls="hero__title show" emitter={this.props.emitter} />)
+              :
+                (null)
+            }
+          </div>
         </div>
       </main>
     )
   }
-
 }
 
 
