@@ -2,6 +2,7 @@ import './Hero.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Typing from '../Typing/Typing';
+import GoTo from '../GoTo/GoTo';
 // import ScrollMagic from 'scrollmagic';
 
 class Hero extends Component {
@@ -67,6 +68,7 @@ class Hero extends Component {
             }
           </div>
         </div>
+        <GoTo emitter={this.props.emitter} />
       </main>
     )
   }

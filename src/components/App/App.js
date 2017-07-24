@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import Hero from '../Hero/Hero';
-import GoTo from '../GoTo/GoTo';
 import AboutMe from '../AboutMe/AboutMe';
 import { EventEmitter } from 'fbemitter';
 // import ScrollMagic from 'scrollmagic';
@@ -27,7 +26,6 @@ class App extends Component {
     return (
       <main>
         <Hero emitter={emitter} sm={smController} />
-        <GoTo emitter={emitter} />
         <AboutMe sm={smController} />
       </main>
     )

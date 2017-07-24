@@ -1,4 +1,12 @@
 .about-me {
   height: 150vh;
+  margin: 100px;
   background: #fff;
+
+  .typing {
+    height: 36px;
+  }
+  .cursor:after {
+    background-color: #000;
+  }
 }
