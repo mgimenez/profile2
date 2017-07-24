@@ -43,7 +43,7 @@ class Hero extends Component {
     var pinScene2 = new ScrollMagic.Scene({
         triggerElement: '.about-me',
         triggerHook: 'onEnter',
-        offset: windowHeight - this.refs.pic.height,
+        offset: windowHeight - (this.refs.pic.height + 50) + 'px',
         duration: '100%'
     })
     .setPin('.hero', {

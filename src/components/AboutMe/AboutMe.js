@@ -18,7 +18,7 @@ class AboutMe extends Component {
 
     var aboutScene = new ScrollMagic.Scene({
         triggerElement: '.about-me',
-        triggerHook: 'onCenter',
+        triggerHook: 'onEnter',
         duration: '100%'
     })
     .on('start', () => {
