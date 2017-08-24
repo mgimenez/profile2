@@ -1,23 +1,23 @@
-import './AboutMe.scss';
+import './Skills.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Typing from '../Typing/Typing';
 
-class AboutMe extends Component {
+class Skills extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      data: 'About me',
+      data: 'Skills',
       showText: false
     }
   }
 
   componentDidMount() {
 
-    var aboutScene = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
+    var skillsScene = new ScrollMagic.Scene({
+        triggerElement: '.skills',
         triggerHook: 'onEnter',
         duration: '100%'
     })
@@ -32,16 +32,14 @@ class AboutMe extends Component {
 
   render() {
     return (
-      <div className="about-me">
+      <div className="skills">
         {
           this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title about-me__title show" />)
+            (<Typing text={this.state.data} cls="common-title skills__title show" />)
           :
             (null)
         }
-        <div className="about-me__description">
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
+        <div className="skills__description">
           <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
           <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
         </div>
@@ -52,4 +50,4 @@ class AboutMe extends Component {
 }
 
 
-export default AboutMe;
+export default Skills;

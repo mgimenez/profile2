@@ -1,0 +1,22 @@
+@import '../../styles/mixins.scss';
+
+.skills {
+  height: 100vh;
+  background: #fa0;
+  position: relative;
+  z-index: 2;
+  padding: 80px 100px;
+  color: #fff;
+  // @include respond-to('medium') {
+  //   margin: 100px;
+  // }
+
+  .cursor:after {
+    background-color: #fff;
+  }
+
+  .skills__description {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
