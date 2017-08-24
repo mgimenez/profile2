@@ -1,6 +1,8 @@
+@import '../../styles/mixins.scss';
+
 .typing {
   position: relative;
-  
+
   &.cursor:after {
     content: '';
     width: 2px;
@@ -10,5 +12,9 @@
     bottom: 0;
     background-color: #fff;
 
+  }
+
+  &.show {
+    visibility: visible;
   }
 }

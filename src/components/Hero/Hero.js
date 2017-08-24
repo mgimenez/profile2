@@ -63,7 +63,7 @@ class Hero extends Component {
           <div className="hero__title__container" >
             {
               this.state.showText ?
-                (<Typing text={this.state.data} cls="hero__title show" emitter={this.props.emitter} />)
+                (<Typing text={this.state.data} cls="common-title hero__title show" emitter={this.props.emitter} />)
               :
                 (null)
             }

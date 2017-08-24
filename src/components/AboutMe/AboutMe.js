@@ -35,7 +35,7 @@ class AboutMe extends Component {
       <div className="about-me">
         {
           this.state.showText ?
-            (<Typing text={this.state.data} cls="hero__title show" />)
+            (<Typing text={this.state.data} cls="common-title about-me__title show" />)
           :
             (null)
         }

@@ -1,3 +1,5 @@
+@import 'mixins.scss';
+
 body {
   font-family: 'Lato';
 }
@@ -5,4 +7,14 @@ body {
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
+}
+
+.common-title {
+  visibility: hidden;
+  font-family: 'Bree Serif';
+  font-size: 33px;
+  letter-spacing: 3px;
+  margin: 30px auto;
+  min-height: 37px;
+  position: relative;
 }

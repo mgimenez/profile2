@@ -30,32 +30,10 @@
   }
 
   .hero__title {
-    visibility: hidden;
-    font-family: 'Bree Serif';
-    font-size: 33px;
-    letter-spacing: 3px;
-    margin: 30px auto;
     color: #fff;
     max-width: 320px;
-    min-height: 37px;
-    position: relative;
     @include respond-to('medium') {
       max-width: 550px;
-    }
-
-    &.cursor:after {
-      content: '';
-      width: 2px;
-      height: 30px;
-      animation: cursor .5s infinite;
-      position: absolute;
-      bottom: 0;
-      background-color: #fff;
-
-    }
-
-    &.show {
-      visibility: visible;
     }
   }
 
