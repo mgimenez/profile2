@@ -4,15 +4,21 @@
   background: url("https://www.toptal.com/designers/subtlepatterns/patterns/low_contrast_linen.png");
   height: 100vh;
   z-index: 1;
+  position: relative;
+  &.fixed {
+    z-index: 3;
+
+    .hero__title__container,
+    .goto {
+      display: none;
+    }
+  }
   .hero__content {
-    // transform: translateY(-50%);
     top: 25%;
     position: relative;
     text-align: center;
-    // height: 370px;
     @include respond-to('medium') {
       top: 35%;
-      // height: 301px;
     }
   }
 
@@ -58,7 +64,6 @@
     height: 150px;
     top: 50px;
     border-radius: 50%;
-    // margin-bottom: 50px;
     animation: bounceIn 1s ease-out, toTop 1s forwards 2s;
     position: relative;
     border: solid 5px #fff;

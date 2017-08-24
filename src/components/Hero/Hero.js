@@ -49,6 +49,7 @@ class Hero extends Component {
     .setPin('.hero', {
       pushFollowers: false
     })
+    .setClassToggle('.hero', 'fixed')
     .addIndicators()
     .addTo(this.props.sm);
 
