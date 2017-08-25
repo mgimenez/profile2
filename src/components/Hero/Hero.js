@@ -37,7 +37,7 @@ class Hero extends Component {
     .setPin('.hero__content', {
       pushFollowers: false
     })
-    .addIndicators()
+    // .addIndicators()
     .addTo(this.props.sm)
 
     var pinScene2 = new ScrollMagic.Scene({
@@ -50,7 +50,7 @@ class Hero extends Component {
       pushFollowers: false
     })
     .setClassToggle('.hero', 'fixed')
-    .addIndicators()
+    // .addIndicators()
     .addTo(this.props.sm);
 
   }

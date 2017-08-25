@@ -26,7 +26,25 @@ class AboutMe extends Component {
         showText: true
       });
     })
-    .addIndicators()
+    // .addIndicators()
+    .addTo(this.props.sm)
+
+
+    var aboutScenePin = new ScrollMagic.Scene({
+        triggerElement: '.about-me',
+        triggerHook: 'onLeave',
+        offset: '-140px',
+        // duration: '10%'
+    })
+    .setPin('.about-me', {
+      pushFollowers: false
+    })
+    .setClassToggle('.about-me', 'fixed')
+    .addIndicators({
+      name: 'pin scene',
+      colorTrigger: 'yellow',
+      colorStart: 'orange'
+    })
     .addTo(this.props.sm)
   }
 

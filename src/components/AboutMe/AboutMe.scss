@@ -6,6 +6,16 @@
   position: relative;
   z-index: 2;
   margin: 100px 50px;
+
+  &.fixed {
+    top: 110px!important;
+    height: 360px!important;
+    overflow: hidden;
+    // position: fixed;
+    // height: 100%;
+    // bottom: 0;
+    // top: 100px;
+  }
   @include respond-to('medium') {
     margin: 100px;
   }

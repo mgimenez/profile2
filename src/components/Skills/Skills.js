@@ -26,7 +26,7 @@ class Skills extends Component {
         showText: true
       });
     })
-    .addIndicators()
+    // .addIndicators()
     .addTo(this.props.sm)
   }
 
