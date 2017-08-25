@@ -40,11 +40,7 @@ class AboutMe extends Component {
       pushFollowers: false
     })
     .setClassToggle('.about-me', 'fixed')
-    .addIndicators({
-      name: 'pin scene',
-      colorTrigger: 'yellow',
-      colorStart: 'orange'
-    })
+    // .addIndicators()
     .addTo(this.props.sm)
   }
 

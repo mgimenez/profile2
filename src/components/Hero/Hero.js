@@ -44,13 +44,13 @@ class Hero extends Component {
         triggerElement: '.about-me',
         triggerHook: 'onEnter',
         offset: windowHeight - (this.refs.pic.height + 50) + 'px',
-        duration: '100%'
+        // duration: '100%'
     })
     .setPin('.hero', {
       pushFollowers: false
     })
     .setClassToggle('.hero', 'fixed')
-    // .addIndicators()
+    .addIndicators()
     .addTo(this.props.sm);
 
   }

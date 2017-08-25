@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Hero from '../Hero/Hero';
 import AboutMe from '../AboutMe/AboutMe';
 import Skills from '../Skills/Skills';
+import Contact from '../Contact/Contact';
 import { EventEmitter } from 'fbemitter';
 // import ScrollMagic from 'scrollmagic';
 
@@ -29,6 +30,7 @@ class App extends Component {
         <Hero emitter={emitter} sm={smController} />
         <AboutMe sm={smController} />
         <Skills sm={smController} />
+        <Contact sm={smController} />
       </main>
     )
   }

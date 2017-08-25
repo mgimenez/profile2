@@ -1,22 +1,13 @@
 @import '../../styles/mixins.scss';
 
-.skills {
+.contact {
   height: 100vh;
-  background: #fa0;
+  background: #dd8;
   position: relative;
   z-index: 2;
   padding: 80px 100px;
   color: #fff;
 
-  &.fixed {
-    top: 200px!important;
-    height: 100px!important;
-    overflow: hidden;
-    width: 100%!important;
-    left: 0!important;
-    padding: 0 100px;
-    z-index: 4;
-  }
   // @include respond-to('medium') {
   //   margin: 100px;
   // }
@@ -25,7 +16,7 @@
     background-color: #fff;
   }
 
-  .skills__description {
+  .contact__description {
     font-size: 18px;
     line-height: 1.5;
   }

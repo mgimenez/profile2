@@ -8,13 +8,22 @@
   margin: 100px 50px;
 
   &.fixed {
-    top: 110px!important;
+    top: 100px!important;
     height: 360px!important;
     overflow: hidden;
+    width: 100%!important;
+    left: 0!important;
+    padding: 0 100px;
+    // z-index: 3;
     // position: fixed;
     // height: 100%;
     // bottom: 0;
     // top: 100px;
+  }
+
+  &.fixed-title {
+    height: 100px!important;
+    z-index: 3;
   }
   @include respond-to('medium') {
     margin: 100px;

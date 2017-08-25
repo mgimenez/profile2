@@ -1,12 +1,12 @@
 @import '../../styles/mixins.scss';
 
 .hero {
-  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/low_contrast_linen.png");
+  background: url("images/low_contrast_linen.png");
   height: 100vh;
   z-index: 1;
   position: relative;
   &.fixed {
-    z-index: 3;
+    z-index: 99;
 
     .hero__title__container,
     .goto {
