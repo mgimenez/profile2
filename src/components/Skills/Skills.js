@@ -29,15 +29,15 @@ class Skills extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    var skillsScenePin = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-200px',
-    })
-    .setClassToggle('.skills', 'fixed')
-    .setClassToggle('.about-me', 'fixed-title')
-    // .addIndicators()
-    .addTo(this.props.sm)
+    // var skillsScenePin = new ScrollMagic.Scene({
+    //     triggerElement: '.skills',
+    //     triggerHook: 'onLeave',
+    //     offset: '-200px',
+    // })
+    // .setClassToggle('.skills', 'fixed')
+    // .setClassToggle('.about-me', 'fixed-title')
+    // // .addIndicators()
+    // .addTo(this.props.sm)
 
 
     // var skillsScenePin2 = new ScrollMagic.Scene({

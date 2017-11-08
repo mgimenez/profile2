@@ -29,14 +29,14 @@ class Contact extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    var contactScenePin = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onLeave',
-        offset: '-300px',
-    })
-    .setClassToggle('.skills', 'fixed')
-    // .addIndicators()
-    .addTo(this.props.sm)
+    // var contactScenePin = new ScrollMagic.Scene({
+    //     triggerElement: '.contact',
+    //     triggerHook: 'onLeave',
+    //     offset: '-300px',
+    // })
+    // .setClassToggle('.skills', 'fixed')
+    // // .addIndicators()
+    // .addTo(this.props.sm)
   }
 
   render() {
