@@ -21,6 +21,8 @@
   //   margin: 100px;
   // }
 
+
+
   .cursor:after {
     background-color: #fff;
   }
@@ -53,26 +55,18 @@
   }
 
   .skill__item {
-    width: calc(50% - 10px);
+    width: calc(25% - 10px);
     float: left;
     margin: 0 0 50px;
     position: relative;
     height: 120px;
-
-    // &:nth-child(even) {
-    //   text-align: left;
-    //   margin-left: 10px;
-    //   .skill__item--img {
-    //     margin-right: 50px;
-    //   }
-    // }
-    // &:nth-child(odd) {
-    //   text-align: right;
-    //   margin-right: 10px;
-    //   .skill__item--img {
-    //     margin-left: 50px;
-    //   }
-    // }
+    opacity: 0;
+    top: 70px;
+    transition: all 1.2s ease-out;
+    &.fadein {
+      opacity: 1;
+      top: 0;
+    }
   }
 }
 

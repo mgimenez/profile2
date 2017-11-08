@@ -50,7 +50,7 @@ class Hero extends Component {
       pushFollowers: false
     })
     .setClassToggle('.hero', 'fixed')
-    .addIndicators()
+    // .addIndicators({name: "Hero fixed", colorEnd: "#FFFFFF"})
     .addTo(this.props.sm);
 
   }
@@ -77,3 +77,4 @@ class Hero extends Component {
 
 
 export default Hero;
+

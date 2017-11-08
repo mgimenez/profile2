@@ -40,7 +40,7 @@ class AboutMe extends Component {
       pushFollowers: false
     })
     .setClassToggle('.about-me', 'fixed')
-    // .addIndicators()
+    // .addIndicators({name: "AboutMe fixed", colorEnd: "#FFFFFF"})
     .addTo(this.props.sm)
   }
 
@@ -67,3 +67,4 @@ class AboutMe extends Component {
 
 
 export default AboutMe;
+

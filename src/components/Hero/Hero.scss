@@ -46,6 +46,7 @@
     position: relative;
     border: solid 5px #fff;
     backface-visibility: hidden;
+    z-index: 99;
   }
 }
 
@@ -109,3 +110,4 @@
     transform: scale3d(1, 1, 1);
   }
 }
+

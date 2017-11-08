@@ -29,14 +29,23 @@ class Contact extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    // var contactScenePin = new ScrollMagic.Scene({
-    //     triggerElement: '.contact',
-    //     triggerHook: 'onLeave',
-    //     offset: '-300px',
-    // })
-    // .setClassToggle('.skills', 'fixed')
-    // // .addIndicators()
-    // .addTo(this.props.sm)
+    var contactScenePin = new ScrollMagic.Scene({
+        triggerElement: '.contact',
+        triggerHook: 'onLeave',
+        offset: '-300px',
+    })
+    .setClassToggle('.skills', 'fixed')
+    .addTo(this.props.sm)
+
+
+    var contactScenePin2 = new ScrollMagic.Scene({
+        triggerElement: '.contact',
+        triggerHook: 'onLeave',
+        offset: '-220px',
+    })
+    .setPin('.contact')
+    // .addIndicators()
+    .addTo(this.props.sm)
   }
 
   render() {
@@ -49,14 +58,20 @@ class Contact extends Component {
             (null)
         }
         <div className="contact__description">
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
+          <div className="contact__list">
+            <div className="contact__item">
+              <img className="contact__item--img contact__item--img__mobile" src={require("./images/mobile.svg")} />
+              <h3 className="contact__item--title">(+54) 15 3 282 9461</h3>
+            </div>
+            <div className="contact__item">
+              <img className="contact__item--img contact__item--img__location" src={require("./images/location.svg")} />
+              <h3 className="contact__item--title">Bs. As. Arg</h3>
+            </div>
+            <div className="contact__item">
+              <img className="contact__item--img contact__item--img__mail" src={require("./images/mail.svg")} />
+              <a href="mailto:matias.gimenez@gmail.com" className="contact__item--title">matias.gimenez@gmail.com</a>
+            </div>
+          </div>
         </div>
       </div>
     )
