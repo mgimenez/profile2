@@ -40,14 +40,14 @@ class Skills extends Component {
     .addTo(this.props.sm)
 
 
-    var skillsScenePin2 = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-120px',
-    })
-    .setPin('.skills')
-    // .addIndicators()
-    .addTo(this.props.sm)
+    // var skillsScenePin2 = new ScrollMagic.Scene({
+    //     triggerElement: '.skills',
+    //     triggerHook: 'onLeave',
+    //     offset: '-120px',
+    // })
+    // .setPin('.skills')
+    // // .addIndicators()
+    // .addTo(this.props.sm)
   }
 
   render() {
@@ -59,15 +59,39 @@ class Skills extends Component {
           :
             (null)
         }
-        <div className="skills__description">
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
-          <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
-          <p>My passion for technology extends far beyond the day-to-day demands of my work: I keep a constant eye on emerging trends in the field, so that I'm always updated on the latest advances, with the goal of ensuring that the quality and scope of my work are always expanding.</p>
+        <div className="skills__list">
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/programming.svg")} />
+            <h3 className="skill__item--title">HTML5<br/>CSS3<br/>JS ES6</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/task-runner.svg")} />
+            <h3 className="skill__item--title">Gulp<br/>Grunt<br/>Webpack</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/performance.svg")} />
+            <h3 className="skill__item--title">Web<br/>Performance<br/>Optimizer</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/api.svg")} />
+            <h3 className="skill__item--title">Api<br/>management</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/frameworks.svg")} />
+            <h3 className="skill__item--title">React js<br/>Angular js<br/>Ember js</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/git.svg")} />
+            <h3 className="skill__item--title">GIT js<br/>SVN</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/design.svg")} />
+            <h3 className="skill__item--title">Photoshop<br/>Illustrator<br/>Sketch<br/>Zeplin</h3>
+          </div>
+          <div className="skill__item">
+            <img className="skill__item--img" src={require("./images/rwd.svg")} />
+            <h3 className="skill__item--title">Responsive Web<br/>Mobile first</h3>
+          </div>
         </div>
       </div>
     )
@@ -77,3 +101,4 @@ class Skills extends Component {
 
 
 export default Skills;
+
