@@ -57,7 +57,7 @@ class Skills extends Component {
         // duration: '10%'
     })
     .setClassToggle('.skill__item', 'fadein')
-    .addIndicators({name: "skill appear", colorEnd: "#FFFFFF"})
+    // .addIndicators({name: "skill appear", colorEnd: "#FFFFFF"})
     .addTo(this.props.sm)
   }
 

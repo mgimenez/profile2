@@ -37,7 +37,7 @@ class Hero extends Component {
     .setPin('.hero__content', {
       pushFollowers: false
     })
-    // .addIndicators()
+    // .addIndicators({name: "Hero pin", colorEnd: "#FFFFFF"})
     .addTo(this.props.sm)
 
     var pinScene2 = new ScrollMagic.Scene({
