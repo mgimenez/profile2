@@ -10,12 +10,20 @@ class Skills extends Component {
 
     this.state = {
       data: 'Skills',
-      showText: false
+      showText: false,
+      width: props.width
     }
+  }
+
+  componentWillMount() {
+    this.setState({
+      width: window.innerWidth
+    });
   }
 
   componentDidMount() {
 
+    /* text animation */
     var skillsScene = new ScrollMagic.Scene({
         triggerElement: '.skills',
         triggerHook: 'onEnter',
@@ -29,27 +37,17 @@ class Skills extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    var skillsScenePin = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-200px',
-    })
-    .setClassToggle('.skills', 'fixed')
-    .setClassToggle('.about-me', 'fixed-title')
-    // .addIndicators({name: "Skills fixed", colorEnd: "#FFFFFF"})
-    .addTo(this.props.sm)
-
-
+    /* pin skills */
     var skillsScenePin2 = new ScrollMagic.Scene({
         triggerElement: '.skills',
         triggerHook: 'onLeave',
         offset: '-120px',
     })
     .setPin('.skills')
-    // .addIndicators({name: "Skills pin", colorEnd: "#FFFFFF"})
+    .addIndicators({name: "Skills pin", colorEnd: "#00F"})
     .addTo(this.props.sm)
 
-
+    /* skills fade-in*/
     var skillAppear = new ScrollMagic.Scene({
         triggerElement: '.about-me',
         triggerHook: 'onLeave',
@@ -57,7 +55,7 @@ class Skills extends Component {
         // duration: '10%'
     })
     .setClassToggle('.skill__item', 'fadein')
-    // .addIndicators({name: "skill appear", colorEnd: "#FFFFFF"})
+    .addIndicators({name: "skill appear", colorEnd: "#0F0"})
     .addTo(this.props.sm)
   }
 
@@ -73,7 +71,7 @@ class Skills extends Component {
         <div className="skills__list">
           <div className="skill__item">
             <img className="skill__item--img" src={require("./images/programming.svg")} />
-            <h3 className="skill__item--title">HTML5<br/>CSS3<br/>JS ES6</h3>
+            <h3 className="skill__item--title">HTML5<br/>CSS3 / SASS<br/>JS ES6</h3>
           </div>
           <div className="skill__item">
             <img className="skill__item--img" src={require("./images/task-runner.svg")} />
@@ -112,4 +110,3 @@ class Skills extends Component {
 
 
 export default Skills;
-
