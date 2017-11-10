@@ -46,10 +46,10 @@ class Skills extends Component {
           offset: '-120px',
       })
       .setPin('.skills')
-      // .addIndicators({name: "Skills pin", colorEnd: "#00F"})
+      .addIndicators({name: "Skills pin", colorEnd: "#00F"})
       .addTo(this.props.sm)
 
-      /* skills fade-in desktop */
+      /* fade-in skills desktop */
       var skillAppear = new ScrollMagic.Scene({
           triggerElement: '.about-me',
           triggerHook: 'onLeave',
@@ -57,7 +57,17 @@ class Skills extends Component {
           // duration: '10%'
       })
       .setClassToggle('.skill__item', 'fadein')
-      // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      .addTo(this.props.sm)
+
+      /* fix skills desktop */
+      var contactScenePin = new ScrollMagic.Scene({
+          triggerElement: '.contact',
+          triggerHook: 'onLeave',
+          offset: '-300px',
+      })
+      // .addIndicators({name: "skill fixed", colorEnd: "#0F0"})
+      .setClassToggle('.skills', 'fixed')
       .addTo(this.props.sm)
 
     } else {
@@ -84,6 +94,16 @@ class Skills extends Component {
       })
       .setClassToggle('.skill__item', 'fadein')
       // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      .addTo(this.props.sm)
+
+      /* fix skills title mobile */
+      var skillsScenePin = new ScrollMagic.Scene({
+          triggerElement: '.contact',
+          triggerHook: 'onLeave',
+          offset: '-350px',
+      })
+      .setClassToggle('.skills', 'fixed-title')
+      // .addIndicators({name: "fix skills title", colorEnd: "#F00"})
       .addTo(this.props.sm)
 
     }

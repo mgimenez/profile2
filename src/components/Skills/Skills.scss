@@ -12,13 +12,15 @@
   }
 
   &.fixed {
-    top: 200px!important;
-    height: 100px!important;
-    overflow: hidden;
-    width: 100%!important;
-    left: 0!important;
-    padding: 0 100px;
-    z-index: 4;
+    @include respond-to('medium') {
+      top: 200px!important;
+      height: 100px!important;
+      overflow: hidden;
+      width: 100%!important;
+      left: 0!important;
+      padding: 0 100px;
+      z-index: 4;
+    }
   }
 
   .skills__title-wrapper {
@@ -26,6 +28,8 @@
     z-index: 3;
     margin-top: -10px!important;
     padding-top: 10px;
+    width: 100%!important;
+    left: 0!important;
     &.pin {
       margin-top: -3px!important;
 
@@ -96,6 +100,13 @@
     @include respond-to('medium') {
       margin: 0 0 50px;
       float: left;
+      width: calc(50% - 10px);
+
+    }
+    @include respond-to('medium-landscape') {
+      width: calc(33% - 10px);
+    }
+    @include respond-to('large') {
       width: calc(25% - 10px);
     }
     &.fadein {

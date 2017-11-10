@@ -37,14 +37,6 @@ class Contact extends Component {
     .addTo(this.props.sm)
 
     if (this.state.width > 768) {
-      var contactScenePin = new ScrollMagic.Scene({
-          triggerElement: '.contact',
-          triggerHook: 'onLeave',
-          offset: '-300px',
-      })
-      .setClassToggle('.skills', 'fixed')
-      .addTo(this.props.sm)
-
 
       var contactScenePin2 = new ScrollMagic.Scene({
           triggerElement: '.contact',
@@ -52,23 +44,46 @@ class Contact extends Component {
           offset: '-220px',
       })
       .setPin('.contact')
-      // .addIndicators()
+      .addIndicators({name: "pin contact", colorEnd: "#0F0"})
       .addTo(this.props.sm)
 
     } else {
 
+      var contactScenePin2 = new ScrollMagic.Scene({
+          triggerElement: '.contact',
+          triggerHook: 'onLeave',
+          offset: '-330px',
+      })
+      .setPin('.contact')
+      .addIndicators({name: "pin contact", colorEnd: "#0F0"})
+      .addTo(this.props.sm)
+
+      /* pin contact mobile */
+      // var contactScenePin2 = new ScrollMagic.Scene({
+      //     triggerElement: '.contact',
+      //     triggerHook: 'onLeave',
+      //     offset: '-260px',
+      // })
+      // .setPin('.contact__title-wrapper', {
+      //   pushFollowers: false
+      // })
+      // .setClassToggle('.contact__title-wrapper', 'pin')
+      // .addIndicators({name: "pin contact title wrap", colorEnd: "#00F"})
+      // .addTo(this.props.sm)
     }
   }
 
   render() {
     return (
       <div className="contact">
-        {
-          this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title contact__title show" />)
-          :
-            (null)
-        }
+        <div className="contact__title-wrapper">
+          {
+            this.state.showText ?
+              (<Typing text={this.state.data} cls="common-title contact__title show" />)
+            :
+              (null)
+          }
+        </div>
         <div className="contact__description">
           <div className="contact__list">
             <div className="contact__item">

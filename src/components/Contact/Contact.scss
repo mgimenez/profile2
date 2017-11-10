@@ -5,8 +5,36 @@
   background: #666699;
   position: relative;
   z-index: 2;
-  padding: 80px 100px;
   color: #fff;
+  padding: 10px 50px;
+  @include respond-to('medium') {
+    padding: 80px 100px;
+  }
+
+  .contact__title-wrapper {
+    background-color: #666699;
+    z-index: 3;
+    margin-top: -10px!important;
+    padding-top: 10px;
+    &.pin {
+      margin-top: -3px!important;
+
+      .contact__title {
+        margin-top: 3px;
+      }
+    }
+    @include respond-to('medium') {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .contact__title {
+    margin-top: 10px;
+    @include respond-to('medium') {
+      margin-top: 30px;
+    }
+  }
 
   .cursor:after {
     background-color: #fff;
@@ -54,12 +82,15 @@
   }
 
   .contact__item {
-    width: calc(33% - 10px);
-    float: left;
-    margin: 0 0 50px;
+    margin: 0 0 20px;
     position: relative;
     height: 120px;
     text-align: center;
+    @include respond-to('medium') {
+      width: calc(33% - 10px);
+      float: left;
+      margin: 0 0 50px;
+    }
   }
 }
 
