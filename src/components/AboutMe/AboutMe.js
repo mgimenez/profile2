@@ -50,12 +50,22 @@ class AboutMe extends Component {
         pushFollowers: false
       })
       .setClassToggle('.about-me', 'fixed')
-      // .addIndicators({name: "AboutMe fixed", colorEnd: "#FFFFFF"})
+      // .addIndicators({name: "pin aboutMe", colorEnd: "#FFFFFF"})
+      .addTo(this.props.sm)
+
+      /* fix about-me title desktop */
+      var skillsScenePin = new ScrollMagic.Scene({
+          triggerElement: '.skills',
+          triggerHook: 'onLeave',
+          offset: '-200px',
+      })
+      .setClassToggle('.about-me', 'fixed-title')
+      // .addIndicators({name: "fix aboutMe", colorEnd: "#F00"})
       .addTo(this.props.sm)
 
     } else {
 
-      /* pin about-me mobile */
+      /* pin about-me title wrapper mobile */
       var aboutScenePin = new ScrollMagic.Scene({
         triggerElement: '.about-me',
         triggerHook: 'onLeave',
@@ -66,31 +76,33 @@ class AboutMe extends Component {
         pushFollowers: false
       })
       .setClassToggle('.about-me__title-wrapper', 'fix-title')
-      // .addIndicators({name: "AboutMe fixed", colorEnd: "#FFFFFF"})
+      // .addIndicators({name: "pin aboutMe title", colorEnd: "#FFFFFF"})
+      .addTo(this.props.sm)
+
+      /* fix about-me title mobile */
+      var skillsScenePin = new ScrollMagic.Scene({
+          triggerElement: '.skills',
+          triggerHook: 'onLeave',
+          offset: '-250px',
+      })
+      .setClassToggle('.about-me', 'fixed-title')
+      // .addIndicators({name: "fix aboutMe title", colorEnd: "#F00"})
       .addTo(this.props.sm)
     }
 
-    /* fix about-me title  */
-    var skillsScenePin = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-200px',
-    })
-    .setClassToggle('.about-me', 'fixed-title')
-    .addIndicators({name: "Skills fixed", colorEnd: "#F00"})
-    .addTo(this.props.sm)
+
   }
 
   render() {
     return (
       <div className="about-me">
         <div className="about-me__title-wrapper">
-        {
-          this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title about-me__title show" />)
-          :
-            (null)
-        }
+          {
+            this.state.showText ?
+              (<Typing text={this.state.data} cls="common-title about-me__title show" />)
+            :
+              (null)
+          }
         </div>
         <div className="about-me__description">
           <p>Since 2010, I have worked as a freelancer, developping sites and applications web meeting tight, high-pressure deadlines while ensuring consistent operation.</p>
@@ -106,3 +118,4 @@ class AboutMe extends Component {
 
 
 export default AboutMe;
+

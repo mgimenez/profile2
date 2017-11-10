@@ -37,37 +37,70 @@ class Skills extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    /* pin skills */
-    var skillsScenePin2 = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-120px',
-    })
-    .setPin('.skills')
-    .addIndicators({name: "Skills pin", colorEnd: "#00F"})
-    .addTo(this.props.sm)
+    if (this.state.width > 768) {
 
-    /* skills fade-in*/
-    var skillAppear = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onLeave',
-        // offset: '-50px',
-        // duration: '10%'
-    })
-    .setClassToggle('.skill__item', 'fadein')
-    .addIndicators({name: "skill appear", colorEnd: "#0F0"})
-    .addTo(this.props.sm)
+      /* pin skills desktop */
+      var skillsScenePin2 = new ScrollMagic.Scene({
+          triggerElement: '.skills',
+          triggerHook: 'onLeave',
+          offset: '-120px',
+      })
+      .setPin('.skills')
+      // .addIndicators({name: "Skills pin", colorEnd: "#00F"})
+      .addTo(this.props.sm)
+
+      /* skills fade-in desktop */
+      var skillAppear = new ScrollMagic.Scene({
+          triggerElement: '.about-me',
+          triggerHook: 'onLeave',
+          // offset: '-50px',
+          // duration: '10%'
+      })
+      .setClassToggle('.skill__item', 'fadein')
+      // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      .addTo(this.props.sm)
+
+    } else {
+
+      /* pin skills mobile */
+      var skillsScenePin2 = new ScrollMagic.Scene({
+          triggerElement: '.skills',
+          triggerHook: 'onLeave',
+          offset: '-260px',
+      })
+      .setPin('.skills__title-wrapper', {
+        pushFollowers: false
+      })
+      .setClassToggle('.skills__title-wrapper', 'pin')
+      // .addIndicators({name: "pin skills title wrap", colorEnd: "#00F"})
+      .addTo(this.props.sm)
+
+      /* skills fade-in mobile */
+      var skillAppear = new ScrollMagic.Scene({
+          triggerElement: '.skills',
+          triggerHook: 'onCenter',
+          offset: '-150px',
+          // duration: '10%'
+      })
+      .setClassToggle('.skill__item', 'fadein')
+      // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      .addTo(this.props.sm)
+
+    }
   }
 
   render() {
     return (
       <div className="skills">
-        {
-          this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title skills__title show" />)
-          :
-            (null)
-        }
+        <div className="skills__title-wrapper">
+          {
+            this.state.showText ?
+              (<Typing text={this.state.data} cls="common-title skills__title show" />)
+            :
+              (null)
+          }
+        </div>
+
         <div className="skills__list">
           <div className="skill__item">
             <img className="skill__item--img" src={require("./images/programming.svg")} />
@@ -110,3 +143,4 @@ class Skills extends Component {
 
 
 export default Skills;
+

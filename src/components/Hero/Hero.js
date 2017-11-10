@@ -29,6 +29,7 @@ class Hero extends Component {
 
     }, 3000);
 
+    /* pin profile img */
     var pinScene = new ScrollMagic.Scene({
         triggerElement: '.hero',
         triggerHook: 'onLeave',
@@ -37,9 +38,10 @@ class Hero extends Component {
     .setPin('.hero__content', {
       pushFollowers: false
     })
-    // .addIndicators({name: "Hero pin", colorEnd: "#FFFFFF"})
+    // .addIndicators({name: "Hero pin", colorEnd: "#F00"})
     .addTo(this.props.sm)
 
+    /* pin hero */
     var pinScene2 = new ScrollMagic.Scene({
         triggerElement: '.about-me',
         triggerHook: 'onEnter',
@@ -50,7 +52,7 @@ class Hero extends Component {
       pushFollowers: false
     })
     .setClassToggle('.hero', 'fixed')
-    // .addIndicators({name: "Hero fixed", colorEnd: "#FFFFFF"})
+    // .addIndicators({name: "Hero fixed", colorEnd: "#00F"})
     .addTo(this.props.sm);
 
   }

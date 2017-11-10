@@ -10,8 +10,15 @@ class Contact extends Component {
 
     this.state = {
       data: 'Contact',
-      showText: false
+      showText: false,
+      width: props.width
     }
+  }
+
+  componentWillMount() {
+    this.setState({
+      width: window.innerWidth
+    });
   }
 
   componentDidMount() {
@@ -29,23 +36,28 @@ class Contact extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    var contactScenePin = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onLeave',
-        offset: '-300px',
-    })
-    .setClassToggle('.skills', 'fixed')
-    .addTo(this.props.sm)
+    if (this.state.width > 768) {
+      var contactScenePin = new ScrollMagic.Scene({
+          triggerElement: '.contact',
+          triggerHook: 'onLeave',
+          offset: '-300px',
+      })
+      .setClassToggle('.skills', 'fixed')
+      .addTo(this.props.sm)
 
 
-    var contactScenePin2 = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onLeave',
-        offset: '-220px',
-    })
-    .setPin('.contact')
-    // .addIndicators()
-    .addTo(this.props.sm)
+      var contactScenePin2 = new ScrollMagic.Scene({
+          triggerElement: '.contact',
+          triggerHook: 'onLeave',
+          offset: '-220px',
+      })
+      .setPin('.contact')
+      // .addIndicators()
+      .addTo(this.props.sm)
+
+    } else {
+
+    }
   }
 
   render() {
@@ -81,3 +93,4 @@ class Contact extends Component {
 
 
 export default Contact;
+
