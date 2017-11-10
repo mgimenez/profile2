@@ -96,16 +96,6 @@ class Skills extends Component {
       // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
       .addTo(this.props.sm)
 
-      /* fix skills title mobile */
-      var skillsScenePin = new ScrollMagic.Scene({
-          triggerElement: '.contact',
-          triggerHook: 'onLeave',
-          offset: '-350px',
-      })
-      .setClassToggle('.skills', 'fixed-title')
-      // .addIndicators({name: "fix skills title", colorEnd: "#F00"})
-      .addTo(this.props.sm)
-
     }
   }
 
