@@ -37,7 +37,7 @@ class Skills extends Component {
     // .addIndicators()
     .addTo(this.props.sm)
 
-    if (this.state.width > 768) {
+    if (this.state.width > 767) {
 
       /* pin skills desktop */
       var skillsScenePin2 = new ScrollMagic.Scene({

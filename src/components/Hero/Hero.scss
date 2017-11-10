@@ -32,6 +32,7 @@
   .hero__title {
     color: #fff;
     max-width: 320px;
+    text-align: center;
     @include respond-to('medium') {
       max-width: 550px;
     }

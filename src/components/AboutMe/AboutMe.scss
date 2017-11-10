@@ -15,6 +15,9 @@
     width: 100%!important;
     left: 0!important;
     padding: 0 50px;
+    @include respond-to('small-xl') {
+      height: 522px!important;
+    }
     @include respond-to('medium') {
       overflow: hidden;
       padding: 0 100px;
