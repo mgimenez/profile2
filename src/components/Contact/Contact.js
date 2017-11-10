@@ -44,7 +44,7 @@ class Contact extends Component {
           offset: '-220px',
       })
       .setPin('.contact')
-      .addIndicators({name: "pin contact", colorEnd: "#0F0"})
+      // .addIndicators({name: "pin contact", colorEnd: "#0F0"})
       .addTo(this.props.sm)
 
     } else {
@@ -54,22 +54,12 @@ class Contact extends Component {
           triggerHook: 'onLeave',
           offset: '-330px',
       })
-      .setPin('.contact')
-      .addIndicators({name: "pin contact", colorEnd: "#0F0"})
+      .setPin('.contact__title-wrapper', {
+        pushFollowers: false
+      })
+      .setClassToggle('.contact__title-wrapper', 'pin')
+      // .addIndicators({name: "pin contact", colorEnd: "#0F0"})
       .addTo(this.props.sm)
-
-      /* pin contact mobile */
-      // var contactScenePin2 = new ScrollMagic.Scene({
-      //     triggerElement: '.contact',
-      //     triggerHook: 'onLeave',
-      //     offset: '-260px',
-      // })
-      // .setPin('.contact__title-wrapper', {
-      //   pushFollowers: false
-      // })
-      // .setClassToggle('.contact__title-wrapper', 'pin')
-      // .addIndicators({name: "pin contact title wrap", colorEnd: "#00F"})
-      // .addTo(this.props.sm)
     }
   }
 
@@ -99,6 +89,9 @@ class Contact extends Component {
               <a href="mailto:matias.gimenez@gmail.com" className="contact__item--title">matias.gimenez@gmail.com</a>
             </div>
           </div>
+        </div>
+        <div className="contact__footer">
+          <p>© 2017 All Rights Reserved.</p>
         </div>
       </div>
     )

@@ -1,7 +1,7 @@
 @import '../../styles/mixins.scss';
 
 .contact {
-  height: 100vh;
+  height: 95vh;
   background: #666699;
   position: relative;
   z-index: 2;
@@ -9,6 +9,7 @@
   padding: 10px 50px;
   @include respond-to('medium') {
     padding: 80px 100px;
+    height: 100vh;
   }
 
   .contact__title-wrapper {
@@ -20,7 +21,7 @@
       margin-top: -3px!important;
 
       .contact__title {
-        margin-top: 3px;
+        margin-top: 10px;
       }
     }
     @include respond-to('medium') {
@@ -91,6 +92,17 @@
       float: left;
       margin: 0 0 50px;
     }
+  }
+
+  .contact__footer {
+    background: url("images/low_contrast_linen.png");
+    width: 100vw;
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 40px 0
   }
 }
 

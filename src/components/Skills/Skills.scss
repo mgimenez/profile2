@@ -4,11 +4,12 @@
   height: 100vh;
   background: #cccccc;
   position: relative;
-  z-index: 2;
+  // z-index: 2;
   color: #fff;
   padding: 10px 50px;
   @include respond-to('medium') {
     padding: 80px 100px;
+    z-index: 2;
   }
 
   &.fixed {

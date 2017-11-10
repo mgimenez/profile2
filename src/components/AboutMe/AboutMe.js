@@ -50,7 +50,7 @@ class AboutMe extends Component {
         pushFollowers: false
       })
       .setClassToggle('.about-me', 'fixed')
-      .addIndicators({name: "pin aboutMe", colorEnd: "#FFFFFF"})
+      // .addIndicators({name: "pin aboutMe", colorEnd: "#FFFFFF"})
       .addTo(this.props.sm)
 
       /* fix about-me title desktop */
@@ -60,7 +60,7 @@ class AboutMe extends Component {
           offset: '-200px',
       })
       .setClassToggle('.about-me', 'fixed-title')
-      .addIndicators({name: "fix aboutMe", colorEnd: "#F00"})
+      // .addIndicators({name: "fix aboutMe", colorEnd: "#F00"})
       .addTo(this.props.sm)
 
     } else {

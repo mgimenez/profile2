@@ -46,7 +46,7 @@ class Skills extends Component {
           offset: '-120px',
       })
       .setPin('.skills')
-      .addIndicators({name: "Skills pin", colorEnd: "#00F"})
+      // .addIndicators({name: "Skills pin", colorEnd: "#00F"})
       .addTo(this.props.sm)
 
       /* fade-in skills desktop */
@@ -57,7 +57,7 @@ class Skills extends Component {
           // duration: '10%'
       })
       .setClassToggle('.skill__item', 'fadein')
-      .addIndicators({name: "skill appear", colorEnd: "#0F0"})
+      // .addIndicators({name: "skill appear", colorEnd: "#0F0"})
       .addTo(this.props.sm)
 
       /* fix skills desktop */
