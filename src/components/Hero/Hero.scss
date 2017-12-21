@@ -5,20 +5,31 @@
   height: 100vh;
   z-index: 1;
   position: relative;
-  &.fixed {
-    z-index: 99;
-
-    .hero__title__container,
-    .goto {
-      display: none;
-    }
-  }
+  // &.fixed {
+  //   z-index: 99;
+  //
+  //   .hero__title__container,
+  //   .goto {
+  //     display: none;
+  //   }
+  // }
   .hero__content {
     top: 25%;
-    position: relative;
+    left: 0;
+    right: 0;
     text-align: center;
+    position: absolute;
+
     @include respond-to('medium') {
       top: 35%;
+    }
+
+    &.fixed {
+      position: fixed;
+    }
+
+    &.pined {
+      top: calc(100% - 70px);
     }
   }
 
@@ -42,11 +53,13 @@
     height: 150px;
     top: 50px;
     border-radius: 50%;
-    animation: bounceIn 1s ease-out, toTop 1s forwards 2s;
     position: relative;
     border: solid 5px #fff;
     backface-visibility: hidden;
     z-index: 99;
+    &.animate {
+      animation: bounceIn 1s ease-out, toTop 1s forwards 2s;
+    }
   }
 }
 

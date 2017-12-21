@@ -12,54 +12,65 @@ class Hero extends Component {
 
     this.state = {
       data: 'Hi, I\'m Matias. Web Designer & Frontend Developer.',
-      showText: false
+      showText: false,
+      elementPosition: 0,
+      elementHeight: 0,
+      elementFixed: true,
+      picAnimation: false
 
     }
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
 
     const { emitter } = this.props;
     let windowHeight = window.innerHeight;
-    setTimeout(() => {
 
+    this.setState({
+      elementPosition: parseInt(this.refs.pic.getBoundingClientRect().top + 50),
+      elementHeight: this.refs.pic.height,
+      picAnimation: true
+    });
+
+    setTimeout(() => {
       this.setState({
         showText: true
       });
 
     }, 3000);
 
-    var pinScene = new ScrollMagic.Scene({
-        triggerElement: '.hero',
-        triggerHook: 'onLeave',
-        duration: windowHeight - (this.refs.content.offsetTop + this.refs.pic.height/2) + 'px'
-    })
-    .setPin('.hero__content', {
-      pushFollowers: false
-    })
-    // .addIndicators({name: "Hero pin", colorEnd: "#FFFFFF"})
-    .addTo(this.props.sm)
+    window.addEventListener('scroll', this.handleScroll);
 
-    var pinScene2 = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onEnter',
-        offset: windowHeight - (this.refs.pic.height + 50) + 'px',
-        // duration: '100%'
-    })
-    .setPin('.hero', {
-      pushFollowers: false
-    })
-    .setClassToggle('.hero', 'fixed')
-    // .addIndicators({name: "Hero fixed", colorEnd: "#FFFFFF"})
-    .addTo(this.props.sm);
+  }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(e) {
+
+    let positionToPin = this.state.elementPosition + (this.state.elementHeight/2),
+        scrollPosition = parseInt(e.target.documentElement.scrollTop);
+
+    if (scrollPosition >= positionToPin) {
+      this.setState({
+        elementFixed: false
+      });
+
+    } else {
+      this.setState({
+        elementFixed: true
+      });
+    }
   }
 
   render() {
     return (
       <main className="hero component">
-        <div ref="content" className="hero__content">
-          <img ref="pic" className="hero__profile-pic" src={require("./images/profile-picture.jpg")} />
+        <div ref="content" className={`hero__content ${this.state.elementFixed ? 'fixed' : 'pined'}`}>
+          <img ref="pic" className={`hero__profile-pic ${this.state.picAnimation ? 'animate' : ''}`} src={require("./images/profile-picture.jpg")} />
           <div className="hero__title__container" >
             {
               this.state.showText ?
