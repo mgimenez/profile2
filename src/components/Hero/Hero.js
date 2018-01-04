@@ -13,10 +13,11 @@ class Hero extends Component {
     this.state = {
       data: 'Hi, I\'m Matias. Web Designer & Frontend Developer.',
       showText: false,
-      elementPosition: 0,
-      elementHeight: 0,
-      elementFixed: true,
-      picAnimation: false
+      picInitialPosition: 0,
+      picHeight: 0,
+      picFixed: true,
+      picAnimation: false,
+      componentPined: false
 
     }
 
@@ -29,8 +30,8 @@ class Hero extends Component {
     let windowHeight = window.innerHeight;
 
     this.setState({
-      elementPosition: parseInt(this.refs.pic.getBoundingClientRect().top + 50),
-      elementHeight: this.refs.pic.height,
+      picInitialPosition: parseInt(this.refs.pic.getBoundingClientRect().top + 50),
+      picHeight: this.refs.pic.height,
       picAnimation: true
     });
 
@@ -51,25 +52,41 @@ class Hero extends Component {
 
   handleScroll(e) {
 
-    let positionToPin = this.state.elementPosition + (this.state.elementHeight/2),
+    let picLivePosition = parseInt(this.refs.pic.getBoundingClientRect().top),
+        positionToPinPic = this.state.picInitialPosition + (this.state.picHeight/2),
         scrollPosition = parseInt(e.target.documentElement.scrollTop);
 
-    if (scrollPosition >= positionToPin) {
+    console.log('scroll: ' + scrollPosition, 'pic: ' + picLivePosition);
+
+    if (scrollPosition >= positionToPinPic) {
       this.setState({
-        elementFixed: false
+        picFixed: false
       });
 
     } else {
       this.setState({
-        elementFixed: true
+        picFixed: true
       });
     }
+
+    if (picLivePosition <= 50) {
+      this.setState({
+        componentPined: true
+      });
+
+    } else {
+      this.setState({
+        componentPined: false
+      });
+    }
+
+
   }
 
   render() {
     return (
-      <main className="hero component">
-        <div ref="content" className={`hero__content ${this.state.elementFixed ? 'fixed' : 'pined'}`}>
+      <main className={`hero component ${this.state.componentPined ? 'pined' : ''}`}>
+        <div ref="content" className={`hero__content ${this.state.picFixed ? 'fixed' : 'pined'}`}>
           <img ref="pic" className={`hero__profile-pic ${this.state.picAnimation ? 'animate' : ''}`} src={require("./images/profile-picture.jpg")} />
           <div className="hero__title__container" >
             {

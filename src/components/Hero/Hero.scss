@@ -5,14 +5,18 @@
   height: 100vh;
   z-index: 1;
   position: relative;
-  // &.fixed {
-  //   z-index: 99;
-  //
-  //   .hero__title__container,
-  //   .goto {
-  //     display: none;
-  //   }
-  // }
+  &.pined {
+    position: fixed;
+    z-index: 99;
+    top: -86%;
+    left: 0;
+    right: 0;
+
+    .hero__title__container {
+      display: none;
+    }
+
+  }
   .hero__content {
     top: 25%;
     left: 0;
