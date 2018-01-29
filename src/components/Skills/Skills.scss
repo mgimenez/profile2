@@ -1,12 +1,14 @@
 @import '../../styles/mixins.scss';
 
 .skills {
-  height: 100vh;
   background: #cccccc;
   position: relative;
   z-index: 2;
-  padding: 80px 100px;
+  padding: 80px 60px;
   color: #fff;
+  @include respond-to('medium') {
+    padding: 80px 100px;
+  }
 
   &.fixed {
     top: 200px!important;
@@ -17,11 +19,6 @@
     padding: 0 100px;
     z-index: 4;
   }
-  // @include respond-to('medium') {
-  //   margin: 100px;
-  // }
-
-
 
   .cursor:after {
     background-color: #fff;
@@ -30,6 +27,7 @@
   .skills__list {
     font-size: 18px;
     line-height: 1.5;
+    overflow: hidden;
   }
 
   .skill__item--img {
@@ -55,17 +53,27 @@
   }
 
   .skill__item {
-    width: calc(25% - 10px);
-    float: left;
-    margin: 0 0 50px;
+
     position: relative;
     height: 120px;
-    opacity: 0;
-    top: 70px;
+
     transition: all 1.2s ease-out;
     &.fadein {
       opacity: 1;
       top: 0;
+    }
+
+    @include respond-to('medium') {
+      width: calc(50% - 10px);
+      float: left;
+      margin: 0 0 50px;
+      top: 70px;
+    }
+    @include respond-to('medium-landscape') {
+      width: calc(33% - 10px);
+    }
+    @include respond-to('large') {
+      width: calc(25% - 10px);
     }
   }
 }

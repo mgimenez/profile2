@@ -21,69 +21,11 @@ class AboutMe extends Component {
     });
   }
   componentDidMount() {
-
-    /* text animation */
-    var aboutScene = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onEnter',
-        duration: '100%'
-    })
-    .on('start', () => {
-      this.setState({
-        showText: true
-      });
-    })
-    // .addIndicators()
-    .addTo(this.props.sm)
-
-
-    if (this.state.width > 768) {
-
-      /* pin about-me desktop */
-      var aboutScenePin = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onLeave',
-        offset: '-140px',
-        // duration: '10%'
-      })
-      .setPin('.about-me', {
-        pushFollowers: false
-      })
-      .setClassToggle('.about-me', 'fixed')
-      // .addIndicators({name: "AboutMe fixed", colorEnd: "#FFFFFF"})
-      .addTo(this.props.sm)
-
-    } else {
-
-      /* pin about-me mobile */
-      var aboutScenePin = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onLeave',
-        offset: '-200px',
-        // duration: '10%'
-      })
-      .setPin('.about-me__title-wrapper', {
-        pushFollowers: false
-      })
-      .setClassToggle('.about-me__title-wrapper', 'fix-title')
-      // .addIndicators({name: "AboutMe fixed", colorEnd: "#FFFFFF"})
-      .addTo(this.props.sm)
-    }
-
-    /* fix about-me title  */
-    var skillsScenePin = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-200px',
-    })
-    .setClassToggle('.about-me', 'fixed-title')
-    .addIndicators({name: "Skills fixed", colorEnd: "#F00"})
-    .addTo(this.props.sm)
   }
 
   render() {
     return (
-      <div className="about-me">
+      <div className={`about-me`}>
         <div className="about-me__title-wrapper">
         {
           this.state.showText ?

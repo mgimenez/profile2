@@ -15,37 +15,6 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-
-    var contactScene = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onEnter',
-        duration: '100%'
-    })
-    .on('start', () => {
-      this.setState({
-        showText: true
-      });
-    })
-    // .addIndicators()
-    .addTo(this.props.sm)
-
-    var contactScenePin = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onLeave',
-        offset: '-300px',
-    })
-    .setClassToggle('.skills', 'fixed')
-    .addTo(this.props.sm)
-
-
-    var contactScenePin2 = new ScrollMagic.Scene({
-        triggerElement: '.contact',
-        triggerHook: 'onLeave',
-        offset: '-220px',
-    })
-    .setPin('.contact')
-    // .addIndicators()
-    .addTo(this.props.sm)
   }
 
   render() {

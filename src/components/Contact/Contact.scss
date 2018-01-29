@@ -1,12 +1,14 @@
 @import '../../styles/mixins.scss';
 
 .contact {
-  height: 100vh;
   background: #666699;
   position: relative;
   z-index: 2;
-  padding: 80px 100px;
+  padding: 80px 60px;
   color: #fff;
+  @include respond-to('medium') {
+    padding: 80px 100px;
+  }
 
   .cursor:after {
     background-color: #fff;
@@ -54,12 +56,13 @@
   }
 
   .contact__item {
-    width: calc(33% - 10px);
-    float: left;
     margin: 0 0 50px;
     position: relative;
     height: 120px;
     text-align: center;
+    @include respond-to('medium') {
+      width: calc(33% - 10px);
+      float: left;
+    }
   }
 }
-

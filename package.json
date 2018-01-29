@@ -1,5 +1,5 @@
 {
-  "name": "supplies-manager",
+  "name": "Profile",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,6 +33,9 @@
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
+    "react-scroll-parallax": "^1.2.1",
+    "react-spark-scroll-gsap": "^4.0.0",
+    "react-sticky": "^6.0.1",
     "scrollmagic": "^2.0.5"
   }
 }

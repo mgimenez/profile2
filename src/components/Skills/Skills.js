@@ -22,41 +22,6 @@ class Skills extends Component {
   }
 
   componentDidMount() {
-
-    /* text animation */
-    var skillsScene = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onEnter',
-        duration: '100%'
-    })
-    .on('start', () => {
-      this.setState({
-        showText: true
-      });
-    })
-    // .addIndicators()
-    .addTo(this.props.sm)
-
-    /* pin skills */
-    var skillsScenePin2 = new ScrollMagic.Scene({
-        triggerElement: '.skills',
-        triggerHook: 'onLeave',
-        offset: '-120px',
-    })
-    .setPin('.skills')
-    .addIndicators({name: "Skills pin", colorEnd: "#00F"})
-    .addTo(this.props.sm)
-
-    /* skills fade-in*/
-    var skillAppear = new ScrollMagic.Scene({
-        triggerElement: '.about-me',
-        triggerHook: 'onLeave',
-        // offset: '-50px',
-        // duration: '10%'
-    })
-    .setClassToggle('.skill__item', 'fadein')
-    .addIndicators({name: "skill appear", colorEnd: "#0F0"})
-    .addTo(this.props.sm)
   }
 
   render() {
