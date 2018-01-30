@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Typing from '../Typing/Typing';
 import GoTo from '../GoTo/GoTo';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 class Hero extends Component {
 
@@ -13,8 +12,13 @@ class Hero extends Component {
     this.state = {
       data: 'Hi, I\'m Matias. Web Designer & Frontend Developer.',
       showText: false,
-      picAnimation: false
+      picAnimation: false,
+      heightWindow: window.innerHeight,
+      picPin: false,
+      heroPin: false
     }
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -32,15 +36,45 @@ class Hero extends Component {
 
     }, 3000);
 
+    window.addEventListener('scroll', this.handleScroll);
+
   }
 
   componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(e) {
+    let scrollPosition = parseInt(e.target.documentElement.scrollTop),
+        positionToPinPic = (this.state.heightWindow/2) + 65,
+        positionToPinHero = this.state.heightWindow - 100;
+        console.log(scrollPosition, positionToPinHero);
+
+    if(scrollPosition >= positionToPinPic) {
+      this.setState({
+        picPin: true
+      });
+    } else {
+      this.setState({
+        picPin: false
+      });
+    }
+
+    if(scrollPosition >= positionToPinHero) {
+      this.setState({
+        heroPin: true
+      });
+    } else if(!this.state.heroPin) {
+      this.setState({
+        heroPin: false
+      });
+    }
   }
 
   render() {
     return (
-      <main className={`hero component`}>
-        <div ref="content" className={`hero__content`}>
+      <main className={`hero component ${this.state.heroPin ? 'pined' : ''}`}>
+        <div ref="content" className={`hero__content ${this.state.picPin ? 'pined' : ''}`}>
           <img ref="pic" className={`hero__profile-pic ${this.state.picAnimation ? 'animate' : ''}`} src={require("./images/profile-picture.jpg")} />
           <div className="hero__title__container" >
             {
