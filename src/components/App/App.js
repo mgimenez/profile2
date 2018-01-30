@@ -6,12 +6,14 @@ import AboutMe from '../AboutMe/AboutMe';
 import Skills from '../Skills/Skills';
 import Contact from '../Contact/Contact';
 import { EventEmitter } from 'fbemitter';
+// import ScrollMagic from 'scrollmagic';
 
 import '../../styles/global.scss';
 import '../../styles/fonts.scss';
 import 'normalize.css';
 
 const emitter = new EventEmitter();
+const smController = new ScrollMagic.Controller();
 
 class App extends Component {
 
@@ -25,9 +27,9 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Hero emitter={emitter} />
-        <AboutMe />
-        <Skills />
+        <Hero emitter={emitter} sm={smController} />
+        <AboutMe sm={smController} />
+        <Skills sm={smController} />
         <Contact />
       </main>
     )

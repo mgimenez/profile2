@@ -28,6 +28,11 @@
     font-size: 18px;
     line-height: 1.5;
     overflow: hidden;
+    opacity: 0;
+    transition: all 1.5s ease-out;
+    &.fade-in {
+      opacity: 1;
+    }
   }
 
   .skill__item--img {
@@ -38,6 +43,10 @@
     top: 50%;
     transform: translateY(-50%);
 
+  }
+
+  .skills__title-wrapper {
+    min-height: 37px;
   }
 
   .skill__item--title {

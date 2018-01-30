@@ -6,16 +6,11 @@
   z-index: 1;
   position: relative;
   &.pined {
-    position: fixed;
-    z-index: 99;
-    top: -86%;
-    left: 0;
-    right: 0;
+    z-index: 3;
 
-    .hero__content {
-      top: 25%;
+    .hero__title__container {
+      display: none;
     }
-
   }
   .hero__content {
     top: 25%;

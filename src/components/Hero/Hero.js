@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Typing from '../Typing/Typing';
 import GoTo from '../GoTo/GoTo';
+// import ScrollMagic from 'scrollmagic';
 
 class Hero extends Component {
 
@@ -15,7 +16,6 @@ class Hero extends Component {
       picAnimation: false,
       heightWindow: window.innerHeight,
       picPin: false,
-      heroPin: false
     }
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -38,6 +38,17 @@ class Hero extends Component {
 
     window.addEventListener('scroll', this.handleScroll);
 
+    var heroScene = new ScrollMagic.Scene({
+         triggerElement: '.hero',
+         triggerHook: 'onLeave',
+         offset: '700px'
+     })
+      .setClassToggle('.hero', 'pined')
+      .setPin('.hero', {
+        pushFollowers: false
+      })
+      .addTo(this.props.sm)
+
   }
 
   componentWillUnmount() {
@@ -46,9 +57,8 @@ class Hero extends Component {
 
   handleScroll(e) {
     let scrollPosition = parseInt(e.target.documentElement.scrollTop),
-        positionToPinPic = (this.state.heightWindow/2) + 65,
-        positionToPinHero = this.state.heightWindow - 100;
-        console.log(scrollPosition, positionToPinHero);
+        positionToPinPic = (this.state.heightWindow/2) + 65;
+        // console.log(scrollPosition);
 
     if(scrollPosition >= positionToPinPic) {
       this.setState({
@@ -59,21 +69,11 @@ class Hero extends Component {
         picPin: false
       });
     }
-
-    if(scrollPosition >= positionToPinHero) {
-      this.setState({
-        heroPin: true
-      });
-    } else if(!this.state.heroPin) {
-      this.setState({
-        heroPin: false
-      });
-    }
   }
 
   render() {
     return (
-      <main className={`hero component ${this.state.heroPin ? 'pined' : ''}`}>
+      <main className={`hero component`}>
         <div ref="content" className={`hero__content ${this.state.picPin ? 'pined' : ''}`}>
           <img ref="pic" className={`hero__profile-pic ${this.state.picAnimation ? 'animate' : ''}`} src={require("./images/profile-picture.jpg")} />
           <div className="hero__title__container" >

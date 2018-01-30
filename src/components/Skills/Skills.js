@@ -22,17 +22,47 @@ class Skills extends Component {
   }
 
   componentDidMount() {
+
+    var SkillsScene = new ScrollMagic.Scene({
+         triggerElement: '.skills',
+         triggerHook: 'onEnter',
+         offset: '100px'
+     })
+     .on('start', () => {
+       this.setState({
+         showText: true
+       });
+     })
+     .setClassToggle('.skills__list', 'fade-in')
+     // .addIndicators({name: "Skillssss", colorEnd: "#FFFFFF"})
+     .addTo(this.props.sm)
+
+    var SkillsScenePin = new ScrollMagic.Scene({
+         triggerElement: '.skills',
+         triggerHook: 'onCenter',
+         offset: '180px'
+     })
+     .on('start', () => {
+       console.log('ad');
+     })
+     .setPin('.skills', {
+       pushFollowers: false
+     })
+     // .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
+     .addTo(this.props.sm)
   }
 
   render() {
     return (
       <div className="skills">
-        {
-          this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title skills__title show" />)
-          :
-            (null)
-        }
+        <div className="skills__title-wrapper">
+          {
+            this.state.showText ?
+              (<Typing text={this.state.data} cls="common-title skills__title show" />)
+            :
+              (null)
+          }
+        </div>
         <div className="skills__list">
           <div className="skill__item">
             <img className="skill__item--img" src={require("./images/programming.svg")} />

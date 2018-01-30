@@ -21,6 +21,29 @@ class AboutMe extends Component {
     });
   }
   componentDidMount() {
+
+    var AboutMeScene = new ScrollMagic.Scene({
+         triggerElement: '.about-me',
+         triggerHook: 'onEnter',
+         offset: '100px'
+     })
+     .on('start', () => {
+       this.setState({
+         showText: true
+       });
+     })
+     .setClassToggle('.about-me__description', 'fade-in')
+     .addTo(this.props.sm)
+
+    var AboutMeScenePin = new ScrollMagic.Scene({
+         triggerElement: '.about-me',
+         triggerHook: 'onCenter',
+         offset: '250px'
+     })
+     .setPin('.about-me', {
+       pushFollowers: false
+     })
+     .addTo(this.props.sm)
   }
 
   render() {
