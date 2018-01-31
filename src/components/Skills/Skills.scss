@@ -3,21 +3,15 @@
 .skills {
   background: #cccccc;
   position: relative;
-  z-index: 2;
-  padding: 80px 60px;
+  z-index: 4;
+  padding: 100px 50px;
   color: #fff;
   @include respond-to('medium') {
-    padding: 80px 100px;
+    padding: 100px;
   }
 
-  &.fixed {
-    top: 200px!important;
-    height: 100px!important;
-    overflow: hidden;
-    width: 100%!important;
-    left: 0!important;
-    padding: 0 100px;
-    z-index: 4;
+  &.pined {
+    z-index: 2;
   }
 
   .cursor:after {
@@ -29,9 +23,18 @@
     line-height: 1.5;
     overflow: hidden;
     opacity: 0;
-    transition: all 1.5s ease-out;
+    margin-top: -80px;
+    transition: all 1.3s ease-out;
     &.fade-in {
       opacity: 1;
+    }
+
+    @include respond-to('medium') {
+      margin-top: 120px;
+
+      &.fade-in {
+        margin-top: 50px;
+      }
     }
   }
 
@@ -47,6 +50,28 @@
 
   .skills__title-wrapper {
     min-height: 37px;
+  }
+
+  .skills__title {
+    height: 36px;
+    text-align: center;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    transform: translateY(-100px);
+    &:after {
+      bottom: 20px;
+    }
+    @include respond-to('medium') {
+      margin: 0 auto;
+      text-align: left;
+      padding: 0;
+      transform: none;
+
+      &:after {
+        bottom: 0;
+      }
+    }
   }
 
   .skill__item--title {
@@ -76,7 +101,6 @@
       width: calc(50% - 10px);
       float: left;
       margin: 0 0 50px;
-      top: 70px;
     }
     @include respond-to('medium-landscape') {
       width: calc(33% - 10px);

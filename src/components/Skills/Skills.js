@@ -40,15 +40,14 @@ class Skills extends Component {
     var SkillsScenePin = new ScrollMagic.Scene({
          triggerElement: '.skills',
          triggerHook: 'onCenter',
-         offset: '180px'
+         offset: '200px'
      })
-     .on('start', () => {
-       console.log('ad');
-     })
+     .setClassToggle('.skills', 'pined')
+    //  .setClassToggle('.about-me', 'tweak')
      .setPin('.skills', {
        pushFollowers: false
      })
-     // .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
+     .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
      .addTo(this.props.sm)
   }
 

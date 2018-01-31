@@ -3,10 +3,9 @@
 .hero {
   background: url("images/low_contrast_linen.png");
   height: 100vh;
-  z-index: 1;
   position: relative;
+  z-index: 4;
   &.pined {
-    z-index: 3;
 
     .hero__title__container {
       display: none;

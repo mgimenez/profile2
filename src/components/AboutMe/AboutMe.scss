@@ -4,11 +4,24 @@
   background: #fff;
   position: relative;
   z-index: 2;
-  margin: 100px 50px;
-
+  padding: 100px 50px;
   @include respond-to('medium') {
-    margin: 100px;
+    padding: 100px;
   }
+
+  &.pined {
+      // z-index: 3;
+      // padding: 0 100px;
+      // .about-me__description {
+      //   display: none;
+      // }
+  }
+
+  // &.tweak {
+  //   .about-me__description {
+  //     display: none;
+  //   }
+  // }
 
   .about-me__title-wrapper {
     min-height: 37px;
@@ -43,10 +56,10 @@
     font-size: 18px;
     line-height: 1.5;
     margin-top: -80px;
-    color: transparent;
-    transition: all 1.5s ease-out;
+    opacity: 0;
+    transition: all 1s ease-out;
     &.fade-in {
-      color: #000
+      opacity: 1;
     }
     @include respond-to('medium') {
       margin-top: 80px;
