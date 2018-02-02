@@ -10,6 +10,7 @@ import { EventEmitter } from 'fbemitter';
 
 import '../../styles/global.scss';
 import '../../styles/fonts.scss';
+import '../../styles/icons.scss';
 import 'normalize.css';
 
 const emitter = new EventEmitter();
@@ -30,7 +31,7 @@ class App extends Component {
         <Hero emitter={emitter} sm={smController} />
         <AboutMe sm={smController} />
         <Skills sm={smController} />
-        <Contact />
+        <Contact sm={smController} />
       </main>
     )
   }

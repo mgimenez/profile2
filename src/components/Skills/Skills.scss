@@ -7,11 +7,7 @@
   padding: 100px 50px;
   color: #fff;
   @include respond-to('medium') {
-    padding: 100px;
-  }
-
-  &.pined {
-    z-index: 2;
+    padding: 20px 100px;
   }
 
   .cursor:after {
@@ -23,17 +19,18 @@
     line-height: 1.5;
     overflow: hidden;
     opacity: 0;
-    margin-top: -80px;
-    transition: all 1.3s ease-out;
+    transition: all .8s linear;
+    position: relative;
+    top: 50px;
     &.fade-in {
       opacity: 1;
     }
 
     @include respond-to('medium') {
-      margin-top: 120px;
+      margin-top: 50px;
 
       &.fade-in {
-        margin-top: 50px;
+        top: 0;
       }
     }
   }

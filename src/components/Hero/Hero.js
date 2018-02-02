@@ -75,6 +75,7 @@ class Hero extends Component {
     return (
       <main className={`hero component`}>
         <div ref="content" className={`hero__content ${this.state.picPin ? 'pined' : ''}`}>
+
           <img ref="pic" className={`hero__profile-pic ${this.state.picAnimation ? 'animate' : ''}`} src={require("./images/profile-picture.jpg")} />
           <div className="hero__title__container" >
             {

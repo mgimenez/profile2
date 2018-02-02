@@ -32,6 +32,10 @@ module.exports = {
         use: ['style-loader','css-loader']
       },
       {
+        test: /\.eot|ttf|woff$/,
+        use: ['file-loader']
+      },
+      {
         test: /\.js/,
         exclude: /node_modules/,
         use: 'babel-loader'

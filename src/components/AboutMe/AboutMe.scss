@@ -6,22 +6,8 @@
   z-index: 2;
   padding: 100px 50px;
   @include respond-to('medium') {
-    padding: 100px;
+    padding: 20px 100px;
   }
-
-  &.pined {
-      // z-index: 3;
-      // padding: 0 100px;
-      // .about-me__description {
-      //   display: none;
-      // }
-  }
-
-  // &.tweak {
-  //   .about-me__description {
-  //     display: none;
-  //   }
-  // }
 
   .about-me__title-wrapper {
     min-height: 37px;
@@ -55,17 +41,18 @@
   .about-me__description {
     font-size: 18px;
     line-height: 1.5;
-    margin-top: -80px;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all .8s linear;
+    position: relative;
+    top: 50px;
     &.fade-in {
       opacity: 1;
     }
     @include respond-to('medium') {
-      margin-top: 80px;
+      margin-top: 50px;
 
       &.fade-in {
-        margin-top: 50px;
+        top: 0;
       }
     }
 

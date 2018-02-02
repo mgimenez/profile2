@@ -38,12 +38,12 @@ class AboutMe extends Component {
     var AboutMeScenePin = new ScrollMagic.Scene({
          triggerElement: '.about-me',
          triggerHook: 'onCenter',
-         offset: '380px'
+         offset: '300px'
      })
      .setPin('.about-me', {
        pushFollowers: false
      })
-     .setClassToggle('.about-me', 'pined')
+     // .setClassToggle('.about-me', 'pined')
      .addIndicators({name: "AboutMe", colorEnd: "#00FFFF"})
      .addTo(this.props.sm)
   }

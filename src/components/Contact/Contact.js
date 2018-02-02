@@ -15,22 +15,49 @@ class Contact extends Component {
   }
 
   componentDidMount() {
+
+    var ContactScene = new ScrollMagic.Scene({
+         triggerElement: '.contact',
+         triggerHook: 'onEnter',
+         offset: '100px'
+     })
+     .on('start', () => {
+       this.setState({
+         showText: true
+       });
+     })
+     .setClassToggle('.contact__description', 'fade-in')
+     .addTo(this.props.sm)
+
+    var ContactScenePin = new ScrollMagic.Scene({
+         triggerElement: '.contact',
+         triggerHook: 'onCenter',
+         offset: '220px'
+     })
+     .setPin('.contact', {
+       pushFollowers: false
+     })
+     .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
+     .addTo(this.props.sm)
+
   }
 
   render() {
     return (
       <div className="contact">
-        {
-          this.state.showText ?
-            (<Typing text={this.state.data} cls="common-title contact__title show" />)
-          :
-            (null)
-        }
+        <div className="contact__title-wrapper">
+          {
+            this.state.showText ?
+              (<Typing text={this.state.data} cls="common-title contact__title show" />)
+            :
+              (null)
+          }
+        </div>
         <div className="contact__description">
           <div className="contact__list">
             <div className="contact__item">
               <img className="contact__item--img contact__item--img__mobile" src={require("./images/mobile.svg")} />
-              <h3 className="contact__item--title">(+54) 15 3 282 9461</h3>
+              <h3 className="contact__item--title">(+54) 911 3 282 9461</h3>
             </div>
             <div className="contact__item">
               <img className="contact__item--img contact__item--img__location" src={require("./images/location.svg")} />
