@@ -22,36 +22,54 @@
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-size: 40px;
+  font-size: 30px;
 }
 
-.icon-icon-location:before {
-  content: "\e947";
+.icon-icon-location {
+  &:hover {
+    color: #666;
+  }
+  &:before {
+    content: "\e947";
+  }
 }
 
-.icon-icon-phone:before {
-  content: "\e958";
+.icon-icon-phone {
+  :before {
+    content: "\e958";
+  }
 }
 
-.icon-icon-tw:before {
-  content: "\ea92";
+.icon-icon-tw {
+  color: #63AEEB;
+  &:before {
+    content: "\ea92";
+  }
 }
 
-.icon-icon-li:before {
-  content: "\eac8";
+.icon-icon-li {
+  color: #297CB2;
+  &:before {
+    content: "\eac8";
+  }
 }
 
-.icon-icon-mail:before {
-  content: "\e600";
+.icon-icon-mail {
+  &:before {
+    content: "\e600";
+  }
 }
 
-.icon-icon-profile:before {
-  content: "\e923";
+.icon-icon-profile {
+  color: #666;
+  &:before {
+    content: "\e923";
+  }
 }
 
 .icon-icon-github:before {
   content: "\e602";
   background-color: #fff;
-  color: #efb972;
+  color: #000;
   border-radius: 5px;
 }

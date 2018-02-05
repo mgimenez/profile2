@@ -41,12 +41,13 @@ class Hero extends Component {
     var heroScene = new ScrollMagic.Scene({
          triggerElement: '.hero',
          triggerHook: 'onLeave',
-         offset: '700px'
+         offset: '650px'
      })
       .setClassToggle('.hero', 'pined')
       .setPin('.hero', {
         pushFollowers: false
       })
+      // .addIndicators({name: "heroScene", colorEnd: "#FFFFFF"})
       .addTo(this.props.sm)
 
   }

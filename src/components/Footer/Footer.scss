@@ -1,0 +1,30 @@
+@import '../../styles/mixins.scss';
+
+.footer {
+  background: #000000;
+  position: relative;
+  z-index: 5;
+  padding: 80px 60px;
+  color: #fff;
+  height: 280px;
+  @include respond-to('medium') {
+    padding: 20px 100px 40px;
+  }
+
+  .legal-text {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .social-icon-container {
+    text-align: center;
+  }
+
+  .social-icon  {
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+
+  }
+}

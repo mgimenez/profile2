@@ -34,17 +34,18 @@ class Skills extends Component {
        });
      })
      .setClassToggle('.skills__list', 'fade-in')
+     // .addIndicators({name: "Skills text", colorEnd: "#FFFF00"})
      .addTo(this.props.sm)
 
     var SkillsScenePin = new ScrollMagic.Scene({
          triggerElement: '.skills',
          triggerHook: 'onCenter',
-         offset: '220px'
+         offset: '150px'
      })
      .setPin('.skills', {
        pushFollowers: false
      })
-     .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
+     // .addIndicators({name: "Skills pin", colorEnd: "#FFFFFF"})
      .addTo(this.props.sm)
   }
 

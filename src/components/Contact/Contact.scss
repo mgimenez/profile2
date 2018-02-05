@@ -7,7 +7,7 @@
   padding: 80px 60px;
   color: #fff;
   @include respond-to('medium') {
-    padding: 20px 100px;
+    padding: 30px 100px 40px;
   }
 
   .cursor:after {

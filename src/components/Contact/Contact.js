@@ -26,18 +26,19 @@ class Contact extends Component {
          showText: true
        });
      })
+     // .addIndicators({name: "Contact show Text", colorEnd: "#FFFFFF"})
      .setClassToggle('.contact__description', 'fade-in')
      .addTo(this.props.sm)
 
     var ContactScenePin = new ScrollMagic.Scene({
          triggerElement: '.contact',
          triggerHook: 'onCenter',
-         offset: '220px'
+         offset: '50px'
      })
      .setPin('.contact', {
        pushFollowers: false
      })
-     .addIndicators({name: "Skills", colorEnd: "#FFFFFF"})
+     // .addIndicators({name: "Contact Pin", colorEnd: "#FFFFFF"})
      .addTo(this.props.sm)
 
   }

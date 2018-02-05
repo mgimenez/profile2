@@ -33,18 +33,18 @@ class AboutMe extends Component {
        });
      })
      .setClassToggle('.about-me__description', 'fade-in')
+     // .addIndicators({name: "AboutMe text", colorEnd: "#FF00FF"})
      .addTo(this.props.sm)
 
     var AboutMeScenePin = new ScrollMagic.Scene({
          triggerElement: '.about-me',
          triggerHook: 'onCenter',
-         offset: '300px'
+         offset: '250px'
      })
      .setPin('.about-me', {
        pushFollowers: false
      })
-     // .setClassToggle('.about-me', 'pined')
-     .addIndicators({name: "AboutMe", colorEnd: "#00FFFF"})
+     // .addIndicators({name: "AboutMe", colorEnd: "#00FFFF"})
      .addTo(this.props.sm)
   }
 
