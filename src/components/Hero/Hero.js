@@ -38,12 +38,30 @@ class Hero extends Component {
 
     window.addEventListener('scroll', this.handleScroll);
 
+    var heroHideText = new ScrollMagic.Scene({
+         triggerElement: '.hero',
+         triggerHook: 'onCenter',
+         offset: '750px'
+     })
+      .setClassToggle('.hero__title__container', 'hide')
+      // .addIndicators({name: "heroHideText", colorEnd: "#FFFFFF"})
+      .addTo(this.props.sm)
+
+    var heroHideGoTo = new ScrollMagic.Scene({
+         triggerElement: '.hero',
+         triggerHook: 'onCenter',
+         offset: '500px'
+     })
+      .setClassToggle('.goto', 'hide')
+      // .addIndicators({name: "heroHideGoTo", colorEnd: "#FFFFFF"})
+      .addTo(this.props.sm)
+
+
     var heroScene = new ScrollMagic.Scene({
          triggerElement: '.hero',
          triggerHook: 'onLeave',
          offset: '650px'
      })
-      .setClassToggle('.hero', 'pined')
       .setPin('.hero', {
         pushFollowers: false
       })

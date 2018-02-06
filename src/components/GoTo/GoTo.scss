@@ -23,6 +23,10 @@
     position: relative;
     animation: arrow .8s infinite 3s;
   }
+
+  &.hide {
+    display: none;
+  }
 }
 
 
